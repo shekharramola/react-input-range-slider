@@ -15,14 +15,25 @@ npm install --save react-input-range-slider
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-input-range-slider'
+import SliderComponent from 'react-input-range-slider'
 import 'react-input-range-slider/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = () => {
+  const getCurrentValue = (value) => {
+    console.log(value)
   }
+  return (
+    <SliderComponent
+      min={0}
+      max={100}
+      step={1}
+      value={15}
+      callback={(value) => getCurrentValue(value)}
+    />
+  )
 }
+
+export default App;
 ```
 
 ## License
